@@ -1,0 +1,53 @@
+<html>
+
+<head>
+    <title>TrackJET HomePage</title>
+</head>
+<style>
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        width: 200px;
+        background-color: #f1f1f1;
+    }
+
+    li a {
+        display: block;
+        color: #000;
+        padding: 8px 16px;
+        text-decoration: none;
+    }
+
+    li a.active {
+        background-color: #4CAF50;
+        color: white;
+    }
+
+    li a:hover:not(.active) {
+        background-color: #555;
+        color: white;
+    }
+
+    .middle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+</style>
+
+<body>
+    <div class = "middle">
+    <img src="../static/trackjet2.png"
+    <ul>
+        <li><a href="http://localhost:5000/locate">Add a WareHouse</a></li>
+        <li><a href="http://localhost:5000/map">WareHouses</a></li>
+        <li><a href="http://localhost:5000/assign">Assign User</a></li>
+        <li><a href="http://localhost:5000/user_map">User Map</a></li>
+    </ul>
+    </div>
+</body>
+
+</html>

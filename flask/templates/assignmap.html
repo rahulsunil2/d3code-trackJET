@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>Google Maps API v3 Directions Example</title>
+    <script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA0iReziRdkeCZXNLVjT62KdKVsWmbqFdo&callback=initMap ">
+    </script>
+    <style>
+        .middle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body style="font-family: Arial; font-size: 12px;" class="middle">
+    <div style="width: 600px;">
+        <div id="map" style="width: 280px; height: 400px; float: left;"></div>
+        <div id="panel" style="width: 300px; float: right;"></div>
+    </div>
+
+    <!-- <var>lat_u</var> = {{loc['lat_u']}}
+    <var>long_u</var> = {{loc['long_u']}}
+    <var>lat_w</var> = {{loc['lat_w']}}
+    <var>long_w</var> = {{loc['long_w']}} -->
+
+    <script type="text/javascript">
+        var directionsService = new google.maps.DirectionsService();
+        var directionsDisplay = new google.maps.DirectionsRenderer();
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 7,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        });
+
+        directionsDisplay.setMap(map);
+        directionsDisplay.setPanel(document.getElementById('panel'));
+        
+        var request = {
+            origin: '{{loc['lat_u'], loc['long_u']}}',
+            destination: '{{loc['lat_w'], loc['long_w']}}',
+            travelMode: google.maps.DirectionsTravelMode.DRIVING
+        };
+
+        directionsService.route(request, function (response, status) {
+            if (status == google.maps.DirectionsStatus.OK) {
+                directionsDisplay.setDirections(response);
+            }
+        });
+    </script>
+</body>
+
+</html>

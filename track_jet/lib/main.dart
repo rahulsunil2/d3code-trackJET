@@ -9,7 +9,7 @@ void main() {
   runApp(new MaterialApp(
     home: new SplashScreen(),
     routes: <String, WidgetBuilder>{
-      '/HomeScreen': (BuildContext context) => new HomeScreen()
+      '/HomeScreen': (BuildContext context) => new MyApp()
     },
   ));
 }
@@ -51,8 +51,8 @@ Widget build(BuildContext context) {
 SystemChrome.setEnabledSystemUIOverlays([]);
 
     // full screen image for splash screen.
-return Container(
-        Center(
-        child: new Image.asset('assets/images/logo.jpg')));
- }
+  return Container(
+    width:double.infinity,
+    child: new Image.asset('assets/images/logo.jpg'));
+  }
 }
